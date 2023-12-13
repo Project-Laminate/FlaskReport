@@ -1,0 +1,219 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ report.title }}</title>
+</head>
+
+<body>
+    <h1>{{ report.title }}</h1>
+    <div>
+        {% for segment in report.segments %}
+        <h2>{{ segment.name }}</h2>
+        <p>Volume: {{ segment.volume }} mm<sup>3</sup></p>
+        <p>Percentage: {{ segment.percentage }}%</p>
+        {% endfor %}
+    </div>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="/templates/index.css" />
+
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+
+            html,
+            body {
+                width: 210mm;
+                height: 297mm;
+            }
+
+            .main-container {
+                margin: 10mm;
+                /* Adjust margin as needed */
+                border: 1px solid black;
+                /* Optional: for visualizing the page boundary */
+                height: 277mm;
+                /* 297mm - 20mm for margins */
+                /* Other styles as needed */
+            }
+
+            /* Hide elements not needed for print */
+            .no-print {
+                display: none;
+            }
+        }
+
+        @media screen {
+            /* Screen-only styles go here */
+        }
+
+        /* Shared styles (for both screen and print) go here */
+    </style>
+
+</head>
+
+
+<body>
+    <div class="main-container">
+        <div class="section">
+            <span class="text">Left ASSSSS</span><span class="text-2">Right Hemisphere</span>
+        </div>
+        <div class="group">
+            <div class="group-2">
+                <div class="wrapper">
+                    <span class="text-3">3195.5 mm</span><span class="text-4">3</span>
+                </div>
+                <span class="text-5">45.5 %</span>
+                <div class="pic">
+                    <span class="text-6">◆</span><span class="text-7">(2500.5 - 4500.5)</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="section-2">
+                    <span class="text-8">3195.5 mm</span><span class="text-9">3</span>
+                </div>
+                <span class="text-a">45.5 %</span>
+                <div class="wrapper-2">
+                    <div class="pic-2"></div>
+                    <span class="text-b">◆</span><span class="text-c">(2500.5 - 4500.5)</span>
+                </div>
+            </div>
+            <span class="text-d">Frontal</span>
+        </div>
+        <div class="box-2">
+            <div class="section-3">
+                <div class="wrapper-3">
+                    <span class="text-e">3195.5 mm</span><span class="text-f">3</span>
+                </div>
+                <span class="text-10">45.5 %</span>
+                <div class="box-3">
+                    <div class="img"></div>
+                    <span class="text-11">◆</span><span class="text-12">(2500.5 - 4500.5)</span>
+                </div>
+            </div>
+            <div class="box-4">
+                <div class="wrapper-4">
+                    <span class="text-13">3195.5 mm</span><span class="text-14">3</span>
+                </div>
+                <span class="text-15">45.5 %</span>
+                <div class="box-5">
+                    <div class="pic-3"></div>
+                    <span class="text-16">◆</span><span class="text-17">(2500.5 - 4500.5)</span>
+                </div>
+            </div>
+            <span class="text-18">Parietal</span>
+        </div>
+        <div class="box-6">
+            <div class="section-4">
+                <div class="section-5">
+                    <span class="text-19">3195.5 mm</span><span class="text-1a">3</span>
+                </div>
+                <span class="text-1b">45.5 %</span>
+                <div class="box-7">
+                    <div class="pic-4"></div>
+                    <span class="text-1c">◆</span><span class="text-1d">(2500.5 - 4500.5)</span>
+                </div>
+            </div>
+            <div class="box-8">
+                <div class="section-6">
+                    <span class="text-1e">3195.5 mm</span><span class="text-1f">3</span>
+                </div>
+                <span class="text-20">45.5 %</span>
+                <div class="box-9">
+                    <div class="img-2"></div>
+                    <span class="text-21">◆</span><span class="text-22">(2500.5 - 4500.5)</span>
+                </div>
+            </div>
+            <span class="text-23">Occipital</span>
+        </div>
+        <div class="box-a">
+            <div class="section-7">
+                <div class="group-3">
+                    <span class="text-24">3195.5 mm</span><span class="text-25">3</span>
+                </div>
+                <span class="text-26">45.5 %</span>
+                <div class="section-8">
+                    <div class="pic-5"></div>
+                    <span class="text-27">◆</span><span class="text-28">(2500.5 - 4500.5)</span>
+                </div>
+            </div>
+            <div class="box-b">
+                <div class="section-9">
+                    <span class="text-29">3195.5 mm</span><span class="text-2a">3</span>
+                </div>
+                <span class="text-2b">45.5 %</span>
+                <div class="box-c">
+                    <div class="img-3"></div>
+                    <span class="text-2c">◆</span><span class="text-2d">(2500.5 - 4500.5)</span>
+                </div>
+            </div>
+            <span class="text-2e">Temporal</span>
+        </div>
+        <div class="box-d">
+            <div class="box-e">
+                <div class="group-4">
+                    <span class="text-2f">3195.5 mm</span><span class="text-30">3</span>
+                </div>
+                <span class="text-31">45.5 %</span>
+                <div class="wrapper-5">
+                    <div class="img-4"></div>
+                    <span class="text-32">◆</span><span class="text-33">(2500.5 - 4500.5)</span>
+                </div>
+            </div>
+            <div class="group-5">
+                <div class="box-f">
+                    <span class="text-34">3195.5 mm</span><span class="text-35">3</span>
+                </div>
+                <span class="text-36">45.5 %</span>
+                <div class="group-6">
+                    <div class="pic-6"></div>
+                    <span class="text-37">◆</span><span class="text-38">(2500.5 - 4500.5)</span>
+                </div>
+            </div>
+            <span class="text-39">Cingulate <br />Parietal</span>
+        </div>
+        <div class="wrapper-6">
+            <div class="group-7">
+                <div class="box-10">
+                    <span class="text-3a">3195.5 mm</span><span class="text-3b">3</span>
+                </div>
+                <span class="text-3c">45.5 %</span>
+                <div class="section-a">
+                    <div class="img-5"></div>
+                    <span class="text-3d">◆</span><span class="text-3e">(2500.5 - 4500.5)</span>
+                </div>
+            </div>
+            <div class="box-11">
+                <div class="group-8">
+                    <span class="text-3f">3195.5 mm</span><span class="text-40">3</span>
+                </div>
+                <span class="text-41">45.5 %</span>
+                <div class="box-12">
+                    <div class="img-6"></div>
+                    <span class="text-42">◆</span><span class="text-43">(2500.5 - 4500.5)</span>
+                </div>
+            </div>
+            <span class="text-44">Cingulate <br />Frontal</span>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-source-serif-pro: "Source Serif Pro";
+
+  /* font sizes */
+  --font-size-xs: 12px;
+  --font-size-5xs: 8px;
+  --font-size-sm: 14px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-honeydew-100: #f0f7ea;
+  --color-honeydew-200: #efefef;
+  --color-silver: #afb8b5;
+  --color-lightcoral: #ed6976;
+  --color-khaki: #feda66;
+
+  /* Border radiuses */
+  --br-8xs: 5px;
+}
+
+.a4-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 210mm;
+  /* A4 width */
+  min-height: 297mm;
+  /* A4 height */
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 5mm rgba(0, 0, 0, 0.5);
+  /* Optional: adds shadow for a better visual effect */
+  background: var(--color-white);
+  /* Assuming you have this color variable defined */
+  padding: 20mm;
+  /* Adjust padding as needed */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* If you have more specific layout requirements, you can add them here */

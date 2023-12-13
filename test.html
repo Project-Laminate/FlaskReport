@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Lobe Structures Report</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            width: 210mm;
+            height: 297mm;
+            display: block;
+            margin: auto;
+        }
+
+        .report-container {
+            width: 190mm;
+            height: 277mm;
+            padding: 10mm;
+            border: 1px solid #000;
+            page-break-after: always;
+        }
+
+        .report-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .report-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .lobe-section {
+            width: 48%;
+        }
+
+        .data-bar {
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            padding: 5px;
+            position: relative;
+            margin-bottom: 5px;
+        }
+
+        .data-bar::before {
+            content: attr(data-percentage);
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #d9534f;
+            border-radius: 5px;
+            text-align: right;
+            padding-right: 5px;
+            box-sizing: border-box;
+        }
+
+        .data-label {
+            font-weight: bold;
+        }
+
+        .data-value {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="report-container">
+        <div class="report-header">
+            <div class="report-title">Brain Lobe Structures</div>
+            <div>Segmentation Report</div>
+            <!-- Other header content here -->
+        </div>
+
+        <!-- Report content starts here -->
+        <div class="report-section">
+            <div class="lobe-section">
+                <div class="data-bar" data-percentage="45.5%" style="width: 45.5%">
+                    <div class="data-label">Frontal Left</div>
+                    <div class="data-value">3195.5 mm<sup>3</sup> 45.5%</div>
+                </div>
+            </div>
+            <!-- ... -->
+            <!-- Repeat for other sections -->
+        </div>
+        <!-- ... -->
+
+    </div>
+
+</body>
+
+</html>
