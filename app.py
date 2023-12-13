@@ -16,7 +16,7 @@ def clamp_filter(value, min_value, max_value):
 def home():
     # Sample data to pass to the template
     report_data = {
-        'title': 'Soumen Structures',
+        'title': 'Soumen Structure',
         'subtitle': 'Report for 2019',
         'orderID': '123456789',
         'Frontal_lobe': [
