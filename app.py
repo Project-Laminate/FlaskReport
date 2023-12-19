@@ -1,31 +1,19 @@
 from flask import Flask, Response, render_template, make_response, url_for
 from os import walk
 from weasyprint import HTML, CSS
-from flask_weasyprint import HTML, render_pdf
+# from flask_weasyprint import HTML, render_pdf
 import os
 import pandas as pd
 import json
-import logging
 
 
 app = Flask(__name__)
 
-logging.basicConfig(level=logging.DEBUG)
 
 
 @app.template_filter('clamp')
 def clamp_filter(value, min_value, max_value):
     return max(min_value, min(value, max_value))
-
-# # Display Web View
-@app.route('/test')
-def test_html():
-    return render_template('test.html')
-
-@app.route('/test.pdf')
-def test_pdf():
-    rendered_html = render_template('test.html')
-    return render_pdf(HTML(string=rendered_html))
 
 def round_floats(obj):
     if isinstance(obj, float):
@@ -57,28 +45,28 @@ report_data = {
 def home():
     rendered_html = render_template('index.html', report=report_data)
 
-    pdf = HTML(string=rendered_html).write_pdf()
-    with open('report.pdf', 'wb') as f:
-        f.write(pdf)
+    # pdf = HTML(string=rendered_html).write_pdf()
+    # with open('report.pdf', 'wb') as f:
+    #     f.write(pdf)
 
     # Convert the HTML to a response object and then return it
     response = make_response(rendered_html)
     response.headers['Content-Type'] = 'text/html'
     return response
 
-# Generate PDF Version
-@app.route('/reportpdf')
-def report_pdf():
-    # Make a PDF straight from HTML in a string just like the rendered HTML page
-    rendered_html = render_template('index.html', report=report_data)
-    pdf = HTML(string=rendered_html).write_pdf()
-    # print(pdf)
+# # Generate PDF Version
+# @app.route('/reportpdf')
+# def report_pdf():
+#     # Make a PDF straight from HTML in a string just like the rendered HTML page
+#     rendered_html = render_template('index.html', report=report_data)
+#     pdf = HTML(string=rendered_html).write_pdf()
+#     # print(pdf)
 
-    # Convert the PDF to a response object and then return it
-    response = Response(pdf, content_type='application/pdf')
-    response.headers['Content-Disposition'] = 'inline; filename=report.pdf'
-    response.headers['Content-Transfer-Encoding'] = 'utf-8'
-    return response
+#     # Convert the PDF to a response object and then return it
+#     response = Response(pdf, content_type='application/pdf')
+#     response.headers['Content-Disposition'] = 'inline; filename=report.pdf'
+#     response.headers['Content-Transfer-Encoding'] = 'utf-8'
+#     return response
 
 
 if __name__ == '__main__':
