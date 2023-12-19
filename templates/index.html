@@ -22,22 +22,22 @@
       <b class="right-hemisphere">Right Hemisphere</b>
       <b class="frontal">Frontal</b>
       <div class="mm3-parent">
-        <div class="mm3">{{report.Frontal_lobe[0].right_volume}} mm3</div>
-        <div class="div">{{report.Frontal_lobe[0].right_percentage}} %</div>
+        <div class="mm3">{{report.csvData.frontal.rh.volume}} mm3</div>
+        <div class="div">{{report.csvData.frontal.rh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
           <div class="percentile-box-item"></div>
           <div class="percentile-box-inner"></div>
           <div class="rectangle-div"></div>
           <div class="percentile-box-child1"></div>
-        </div>
-        <div class="div1">(2500.5 - 4500.5)</div>
+        </div> 
+        <div class="div1">({{report.csvData.frontal.rh.min}} - {{report.csvData.frontal.rh.max}})</div>
         <b class="b"
-          style="position: absolute; left: {{ report.Frontal_lobe[0].right_percentage|clamp(6, 94) }}%; bottom: -10px; transform: translateX(-50%);">◆</b>
+          style="position: absolute; left: {{ report.csvData.frontal.rh.percentile|clamp(6, 94) }}%; bottom: -10px; transform: translateX(-50%);">◆</b>
       </div>
       <div class="mm3-group">
-        <div class="mm3">{{report.Frontal_lobe[0].left_volume}} mm3</div>
-        <div class="div">{{report.Frontal_lobe[0].left_percentage}} %</div>
+        <div class="mm3">{{report.csvData.frontal.lh.volume}} mm3</div>
+        <div class="div">{{report.csvData.frontal.lh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
           <div class="percentile-box-item"></div>
@@ -45,14 +45,14 @@
           <div class="rectangle-div"></div>
           <div class="percentile-box-child1"></div>
         </div>
-        <div class="div1">(2500.5 - 4500.5)</div>
+        <div class="div1">({{report.csvData.frontal.lh.min}} - {{report.csvData.frontal.lh.max}})</div>
         <b class="b"
-          style="position: absolute; left: {{ report.Frontal_lobe[0].left_percentage|clamp(6, 94) }}%; bottom: -10px; transform: translateX(-50%);">◆</b>
+          style="position: absolute; left: {{ report.csvData.frontal.lh.percentile|clamp(6, 94) }}%; bottom: -10px; transform: translateX(-50%);">◆</b>
       </div>
       <b class="parietal">Parietal</b>
       <div class="mm3-container">
-        <div class="mm3">{{report.Parietal_lobe[0].right_volume}} mm3</div>
-        <div class="div">{{report.Parietal_lobe[0].right_percentage}} %</div>
+        <div class="mm3">{{report.csvData.parietal.rh.volume}} mm3</div>
+        <div class="div">{{report.csvData.parietal.rh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
           <div class="percentile-box-item"></div>
@@ -60,12 +60,12 @@
           <div class="rectangle-div"></div>
           <div class="percentile-box-child1"></div>
         </div>
-        <div class="div1">(2500.5 - 4500.5)</div>
+        <div class="div1">({{report.csvData.parietal.rh.min}} - {{report.csvData.parietal.rh.max}})</div>
         <b class="b2">◆</b>
       </div>
       <div class="frame-div">
-        <div class="mm3">{{report.Parietal_lobe[0].left_volume}} mm3</div>
-        <div class="div">{{report.Parietal_lobe[0].left_percentage}} %</div>
+        <div class="mm3">{{report.csvData.parietal.lh.volume}} mm3</div>
+        <div class="div">{{report.csvData.parietal.lh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
           <div class="percentile-box-item"></div>
@@ -73,13 +73,13 @@
           <div class="rectangle-div"></div>
           <div class="percentile-box-child1"></div>
         </div>
-        <div class="div1">(2500.5 - 4500.5)</div>
+        <div class="div1">({{report.csvData.parietal.lh.min}} - {{report.csvData.parietal.lh.max}})</div>
         <b class="b3">◆</b>
       </div>
       <b class="occipital">Occipital</b>
       <div class="mm3-parent1">
-        <div class="mm3">{{report.Occipital_lobe[0].right_volume}} mm3</div>
-        <div class="div">{{report.Occipital_lobe[0].right_percentage}} %</div>
+        <div class="mm3">{{report.csvData.occipital.rh.volume}} mm3</div>
+        <div class="div">{{report.csvData.occipital.rh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
           <div class="percentile-box-item"></div>
@@ -87,12 +87,12 @@
           <div class="rectangle-div"></div>
           <div class="percentile-box-child1"></div>
         </div>
-        <div class="div1">(2500.5 - 4500.5)</div>
+        <div class="div1">({{report.csvData.occipital.rh.min}} - {{report.csvData.occipital.rh.max}})</div>
         <b class="b">◆</b>
       </div>
       <div class="mm3-parent2">
-        <div class="mm3">{{report.Occipital_lobe[0].left_volume}} mm3</div>
-        <div class="div">{{report.Occipital_lobe[0].left_percentage}} %</div>
+        <div class="mm3">{{report.csvData.occipital.lh.volume}} mm3</div>
+        <div class="div">{{report.csvData.occipital.lh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
           <div class="percentile-box-item"></div>
@@ -100,13 +100,13 @@
           <div class="rectangle-div"></div>
           <div class="percentile-box-child1"></div>
         </div>
-        <div class="div1">(2500.5 - 4500.5)</div>
+        <div class="div1">({{report.csvData.occipital.lh.min}} - {{report.csvData.occipital.lh.max}})</div>
         <b class="b">◆</b>
       </div>
       <b class="temporal">Temporal</b>
       <div class="mm3-parent3">
-        <div class="mm3">{{report.Temporal_lobe[0].right_volume}} mm3</div>
-        <div class="div">{{report.Temporal_lobe[0].right_percentage}} %</div>
+        <div class="mm3">{{report.csvData.temporal.rh.volume}} mm3</div>
+        <div class="div">{{report.csvData.temporal.rh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
           <div class="percentile-box-item"></div>
@@ -114,12 +114,12 @@
           <div class="rectangle-div"></div>
           <div class="percentile-box-child1"></div>
         </div>
-        <div class="div1">(2500.5 - 4500.5)</div>
+        <div class="div1">({{report.csvData.temporal.rh.min}} - {{report.csvData.temporal.rh.max}})</div>
         <b class="b6">◆</b>
       </div>
       <div class="mm3-parent4">
-        <div class="mm3">{{report.Temporal_lobe[0].left_volume}} mm3</div>
-        <div class="div">{{report.Temporal_lobe[0].left_percentage}} %</div>
+        <div class="mm3">{{report.csvData.temporal.lh.volume}} mm3</div>
+        <div class="div">{{report.csvData.temporal.lh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
           <div class="percentile-box-item"></div>
@@ -127,7 +127,7 @@
           <div class="rectangle-div"></div>
           <div class="percentile-box-child1"></div>
         </div>
-        <div class="div1">(2500.5 - 4500.5)</div>
+        <div class="div1">({{report.csvData.temporal.lh.min}} - {{report.csvData.temporal.lh.max}})</div>
         <b class="b7">◆</b>
       </div>
       <b class="cingulate-parietal">
@@ -137,8 +137,8 @@
         </span>
       </b>
       <div class="mm3-parent5">
-        <div class="mm3">{{report.Cingulate_Parietal_lobe[0].right_volume}} mm3</div>
-        <div class="div">{{report.Cingulate_Parietal_lobe[0].right_percentage}} %</div>
+        <div class="mm3">{{report.csvData.cingulateparietal.rh.volume}} mm3</div>
+        <div class="div">{{report.csvData.cingulateparietal.rh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
           <div class="percentile-box-item"></div>
@@ -146,12 +146,12 @@
           <div class="rectangle-div"></div>
           <div class="percentile-box-child1"></div>
         </div>
-        <div class="div1">(2500.5 - 4500.5)</div>
+        <div class="div1">({{report.csvData.cingulateparietal.rh.min}} - {{report.csvData.cingulateparietal.rh.max}})</div>
         <b class="b">◆</b>
       </div>
       <div class="mm3-parent6">
-        <div class="mm3">{{report.Cingulate_Parietal_lobe[0].left_volume}} mm3</div>
-        <div class="div">{{report.Cingulate_Parietal_lobe[0].left_percentage}} %</div>
+        <div class="mm3">{{report.csvData.cingulateparietal.lh.volume}} mm3</div>
+        <div class="div">{{report.csvData.cingulateparietal.lh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
           <div class="percentile-box-item"></div>
@@ -159,7 +159,7 @@
           <div class="rectangle-div"></div>
           <div class="percentile-box-child1"></div>
         </div>
-        <div class="div1">(2500.5 - 4500.5)</div>
+        <div class="div1">({{report.csvData.cingulateparietal.lh.min}} - {{report.csvData.cingulateparietal.lh.max}})</div>
         <b class="b">◆</b>
       </div>
       <b class="cingulate-frontal">
@@ -169,8 +169,8 @@
         </span>
       </b>
       <div class="mm3-parent7">
-        <div class="mm3">{{report.Cingulate_Frontal_lobe[0].right_volume}} mm3</div>
-        <div class="div">{{report.Cingulate_Frontal_lobe[0].right_percentage}} %</div>
+        <div class="mm3">{{report.csvData.cingulatefrontal.rh.volume}} mm3</div>
+        <div class="div">{{report.csvData.cingulatefrontal.rh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
           <div class="percentile-box-item"></div>
@@ -178,12 +178,12 @@
           <div class="rectangle-div"></div>
           <div class="percentile-box-child1"></div>
         </div>
-        <div class="div1">(2500.5 - 4500.5)</div>
+        <div class="div1">({{report.csvData.cingulatefrontal.rh.min}} - {{report.csvData.cingulatefrontal.rh.max}})</div>
         <b class="b">◆</b>
       </div>
       <div class="mm3-parent8">
-        <div class="mm3">{{report.Cingulate_Frontal_lobe[0].left_volume}} mm3</div>
-        <div class="div">{{report.Cingulate_Frontal_lobe[0].left_percentage}} %</div>
+        <div class="mm3">{{report.csvData.cingulatefrontal.lh.volume}} mm3</div>
+        <div class="div">{{report.csvData.cingulatefrontal.lh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
           <div class="percentile-box-item"></div>
@@ -191,7 +191,7 @@
           <div class="rectangle-div"></div>
           <div class="percentile-box-child1"></div>
         </div>
-        <div class="div1">(2500.5 - 4500.5)</div>
+        <div class="div1">({{report.csvData.cingulatefrontal.lh.min}} - {{report.csvData.cingulatefrontal.lh.max}})</div>
         <b class="b">◆</b>
       </div>
     </div>

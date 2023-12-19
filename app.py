@@ -3,9 +3,15 @@ from os import walk
 from weasyprint import HTML, CSS
 from flask_weasyprint import HTML, render_pdf
 import os
+import pandas as pd
+import json
+import logging
 
 
 app = Flask(__name__)
+
+logging.basicConfig(level=logging.DEBUG)
+
 
 @app.template_filter('clamp')
 def clamp_filter(value, min_value, max_value):
@@ -21,35 +27,29 @@ def test_pdf():
     rendered_html = render_template('test.html')
     return render_pdf(HTML(string=rendered_html))
 
+def round_floats(obj):
+    if isinstance(obj, float):
+        return round(obj, 2)
+    elif isinstance(obj, dict):
+        return dict((k, round_floats(v)) for k, v in obj.items())
+    elif isinstance(obj, (list, tuple)):
+        return list(map(round_floats, obj))
+    return obj
+
+def load_report_data():
+    json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data/csv_data.json')
+    with open(json_path, 'r') as json_file:
+        data = json.load(json_file)
+    # recursively round all floats in json to 2 decimal places
+    return round_floats(data)
+
+
 # Sample data to pass to the template
 report_data = {
     'title': 'Brain Cortexes Report',
     'subtitle': 'Volumetric Radiology Report',
     'orderID': '123456789',
-    'Frontal_lobe': [
-        {'left_volume': 3095.5, 'left_percentage': 99.5,
-            'right_volume': 3195.5, 'right_percentage': 50.5}
-    ],
-    'Parietal_lobe': [
-        {'left_volume': 3495.5, 'left_percentage': 15.5,
-            'right_volume': 2195.5, 'right_percentage': 65.5}
-    ],
-    'Occipital_lobe': [
-        {'left_volume': 3195.5, 'left_percentage': 45.5,
-            'right_volume': 3195.5, 'right_percentage': 45.5}
-    ],
-    'Temporal_lobe': [
-        {'left_volume': 3195.5, 'left_percentage': 45.5,
-            'right_volume': 3195.5, 'right_percentage': 45.5}
-    ],
-    'Cingulate_Parietal_lobe': [
-        {'left_volume': 1195.5, 'left_percentage': 45.5,
-            'right_volume': 6195.5, 'right_percentage': 45.5}
-    ],
-    'Cingulate_Frontal_lobe': [
-        {'left_volume': 7195.5, 'left_percentage': 95.5,
-            'right_volume': 8195.5, 'right_percentage': 40.5}
-    ],
+    'csvData': load_report_data(),
 }
 
 
@@ -82,4 +82,5 @@ def report_pdf():
 
 
 if __name__ == '__main__':
+    # print(report_data)
     app.run(debug=True)

@@ -43,9 +43,9 @@
 }
 
 .mm3 {
-  width: 38.1%;
+  width: 55.1%;
   top: 5px;
-  left: 33.33%;
+  left: 23.33%;
 }
 
 .div {
@@ -107,10 +107,9 @@
   height: 15px;
 }
 
-.b,
-.div1 {
+.b, .div1 {
   position: absolute;
-  left: 65px;
+  left: 49px;
   font-size: var(--font-size-5xs);
   display: flex;
   align-items: center;
@@ -121,7 +120,7 @@
   top: 48px;
   font-weight: 600;
   color: var(--color-silver);
-  width: 59px;
+  width: 90px;
   height: 14px;
 }
 
@@ -354,10 +353,10 @@
 
 .mm3-parent7,
 .mm3-parent8,
-.table {
+/* .table {
   position: absolute;
   overflow: hidden;
-}
+} */
 
 .mm3-parent8 {
   top: 417px;
@@ -368,7 +367,7 @@
   height: 74px;
 }
 
-.table {
+/* .table {
   top: 229px;
   left: 350px;
   width: 626px;
@@ -377,7 +376,21 @@
   size: a4;
   margin-top: 140px;
   transform: scale(1.2);
+} */
+
+.table {
+  position: absolute;
+  top: 82%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 626px; /* Your specific width */
+  height: 907px; /* Your specific height */
+  text-align: center;
+  /* Removed the size: a4; as it's not a valid CSS property */
+  margin-top: 0; /* Centering it, so no need for margin-top */
+  /* Removed the transform: scale(1.2); scaling might disrupt the centering */
 }
+
 
 .evaluation,
 .order-id,
@@ -447,7 +460,28 @@
   left: 0;
 }
 
-.footer,
+.header {
+  position: absolute;
+  top: 20mm; /* Adjust this value to position the header from the top */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; /* If you want the header to span the whole width */
+  text-align: center; /* This ensures the content in the header is centered */
+  /* Adjust height, padding, etc., as needed */
+}
+
+.footer {
+  position: absolute;
+  bottom: 20mm; /* Adjust this value to position the footer from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; /* If you want the footer to span the whole width */
+  text-align: center; /* This ensures the content in the footer is centered */
+  /* Adjust height, padding, etc., as needed */
+}
+
+
+/* .footer,
 .group-child,
 .page-2-of-3-parent {
   position: absolute;
@@ -466,7 +500,7 @@
 .footer {
   top: 900px;
   left: 365px;
-}
+} */
 
 .brain-lobe-structures,
 .segmentation-report {
@@ -500,13 +534,13 @@
   object-fit: cover;
 }
 
-.header {
+/* .header {
   position: absolute;
   top: 100px;
   left: 350px;
   width: 551px;
   height: 66px;
-}
+} */
 
 .a4-page {
   display: flex;
