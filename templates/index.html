@@ -22,7 +22,7 @@
       <b class="right-hemisphere">Right Hemisphere</b>
       <b class="frontal">Frontal</b>
       <div class="mm3-parent">
-        <div class="mm3">{{report.csvData.frontal.rh.volume}} mm3</div>
+        <div class="mm3">{{report.csvData.frontal.rh.volume}} mm<sup>3</sup></div>
         <div class="div">{{report.csvData.frontal.rh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
@@ -36,7 +36,7 @@
           style="position: absolute; left: {{ report.csvData.frontal.rh.percentile|clamp(6, 94) }}%; bottom: -10px; transform: translateX(-50%);">◆</b>
       </div>
       <div class="mm3-group">
-        <div class="mm3">{{report.csvData.frontal.lh.volume}} mm3</div>
+        <div class="mm3">{{report.csvData.frontal.lh.volume}} mm<sup>3</sup></div>
         <div class="div">{{report.csvData.frontal.lh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
@@ -51,7 +51,7 @@
       </div>
       <b class="parietal">Parietal</b>
       <div class="mm3-container">
-        <div class="mm3">{{report.csvData.parietal.rh.volume}} mm3</div>
+        <div class="mm3">{{report.csvData.parietal.rh.volume}} mm<sup>3</sup></div>
         <div class="div">{{report.csvData.parietal.rh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
@@ -61,10 +61,10 @@
           <div class="percentile-box-child1"></div>
         </div>
         <div class="div1">({{report.csvData.parietal.rh.min}} - {{report.csvData.parietal.rh.max}})</div>
-        <b class="b2">◆</b>
+        <b class="b2" style="position: absolute; left: {{ report.csvData.parietal.rh.percentile|clamp(6, 94) }}%; bottom: -10px; transform: translateX(-50%);">◆</b>
       </div>
       <div class="frame-div">
-        <div class="mm3">{{report.csvData.parietal.lh.volume}} mm3</div>
+        <div class="mm3">{{report.csvData.parietal.lh.volume}} mm<sup>3</sup></div>
         <div class="div">{{report.csvData.parietal.lh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
@@ -74,11 +74,11 @@
           <div class="percentile-box-child1"></div>
         </div>
         <div class="div1">({{report.csvData.parietal.lh.min}} - {{report.csvData.parietal.lh.max}})</div>
-        <b class="b3">◆</b>
+        <b class="b3" style="position: absolute; left: {{ report.csvData.parietal.lh.percentile|clamp(6, 94) }}%; bottom: -10px; transform: translateX(-50%);">◆</b>
       </div>
       <b class="occipital">Occipital</b>
       <div class="mm3-parent1">
-        <div class="mm3">{{report.csvData.occipital.rh.volume}} mm3</div>
+        <div class="mm3">{{report.csvData.occipital.rh.volume}} mm<sup>3</sup></div>
         <div class="div">{{report.csvData.occipital.rh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
@@ -88,10 +88,10 @@
           <div class="percentile-box-child1"></div>
         </div>
         <div class="div1">({{report.csvData.occipital.rh.min}} - {{report.csvData.occipital.rh.max}})</div>
-        <b class="b">◆</b>
+        <b class="b" style="position: absolute; left: {{ report.csvData.occipital.rh.percentile|clamp(6, 94) }}%; bottom: -10px; transform: translateX(-50%);">◆</b>
       </div>
       <div class="mm3-parent2">
-        <div class="mm3">{{report.csvData.occipital.lh.volume}} mm3</div>
+        <div class="mm3">{{report.csvData.occipital.lh.volume}} mm<sup>3</sup></div>
         <div class="div">{{report.csvData.occipital.lh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
@@ -101,11 +101,11 @@
           <div class="percentile-box-child1"></div>
         </div>
         <div class="div1">({{report.csvData.occipital.lh.min}} - {{report.csvData.occipital.lh.max}})</div>
-        <b class="b">◆</b>
+        <b class="b" style="position: absolute; left: {{ report.csvData.occipital.lh.percentile|clamp(6, 94) }}%; bottom: -10px; transform: translateX(-50%);">◆</b>
       </div>
       <b class="temporal">Temporal</b>
       <div class="mm3-parent3">
-        <div class="mm3">{{report.csvData.temporal.rh.volume}} mm3</div>
+        <div class="mm3">{{report.csvData.temporal.rh.volume}} mm<sup>3</sup></div>
         <div class="div">{{report.csvData.temporal.rh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
@@ -115,10 +115,10 @@
           <div class="percentile-box-child1"></div>
         </div>
         <div class="div1">({{report.csvData.temporal.rh.min}} - {{report.csvData.temporal.rh.max}})</div>
-        <b class="b6">◆</b>
+        <b class="b6" style="position: absolute; left: {{ report.csvData.temporal.rh.percentile|clamp(6, 94) }}%; bottom: -10px; transform: translateX(-50%);">◆</b>
       </div>
       <div class="mm3-parent4">
-        <div class="mm3">{{report.csvData.temporal.lh.volume}} mm3</div>
+        <div class="mm3">{{report.csvData.temporal.lh.volume}} mm<sup>3</sup></div>
         <div class="div">{{report.csvData.temporal.lh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
@@ -128,7 +128,7 @@
           <div class="percentile-box-child1"></div>
         </div>
         <div class="div1">({{report.csvData.temporal.lh.min}} - {{report.csvData.temporal.lh.max}})</div>
-        <b class="b7">◆</b>
+        <b class="b7" style="position: absolute; left: {{ report.csvData.temporal.lh.percentile|clamp(6, 94) }}%; bottom: -10px; transform: translateX(-50%);">◆</b>
       </div>
       <b class="cingulate-parietal">
         <span class="cingulate-parietal-txt-container">
@@ -137,7 +137,7 @@
         </span>
       </b>
       <div class="mm3-parent5">
-        <div class="mm3">{{report.csvData.cingulateparietal.rh.volume}} mm3</div>
+        <div class="mm3">{{report.csvData.cingulateparietal.rh.volume}} mm<sup>3</sup></div>
         <div class="div">{{report.csvData.cingulateparietal.rh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
@@ -147,10 +147,10 @@
           <div class="percentile-box-child1"></div>
         </div>
         <div class="div1">({{report.csvData.cingulateparietal.rh.min}} - {{report.csvData.cingulateparietal.rh.max}})</div>
-        <b class="b">◆</b>
+        <b class="b" style="position: absolute; left: {{ report.csvData.cingulateparietal.rh.percentile|clamp(6, 94) }}%; bottom: -10px; transform: translateX(-50%);">◆</b>
       </div>
       <div class="mm3-parent6">
-        <div class="mm3">{{report.csvData.cingulateparietal.lh.volume}} mm3</div>
+        <div class="mm3">{{report.csvData.cingulateparietal.lh.volume}} mm<sup>3</sup></div>
         <div class="div">{{report.csvData.cingulateparietal.lh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
@@ -160,7 +160,7 @@
           <div class="percentile-box-child1"></div>
         </div>
         <div class="div1">({{report.csvData.cingulateparietal.lh.min}} - {{report.csvData.cingulateparietal.lh.max}})</div>
-        <b class="b">◆</b>
+        <b class="b" style="position: absolute; left: {{ report.csvData.cingulateparietal.lh.percentile|clamp(6, 94) }}%; bottom: -10px; transform: translateX(-50%);">◆</b>
       </div>
       <b class="cingulate-frontal">
         <span class="cingulate-parietal-txt-container">
@@ -169,7 +169,7 @@
         </span>
       </b>
       <div class="mm3-parent7">
-        <div class="mm3">{{report.csvData.cingulatefrontal.rh.volume}} mm3</div>
+        <div class="mm3">{{report.csvData.cingulatefrontal.rh.volume}} mm<sup>3</sup></div>
         <div class="div">{{report.csvData.cingulatefrontal.rh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
@@ -179,10 +179,10 @@
           <div class="percentile-box-child1"></div>
         </div>
         <div class="div1">({{report.csvData.cingulatefrontal.rh.min}} - {{report.csvData.cingulatefrontal.rh.max}})</div>
-        <b class="b">◆</b>
+        <b class="b" style="position: absolute; left: {{ report.csvData.cingulatefrontal.rh.percentile|clamp(6, 94) }}%; bottom: -10px; transform: translateX(-50%);">◆</b>
       </div>
       <div class="mm3-parent8">
-        <div class="mm3">{{report.csvData.cingulatefrontal.lh.volume}} mm3</div>
+        <div class="mm3">{{report.csvData.cingulatefrontal.lh.volume}} mm<sup>3</sup></div>
         <div class="div">{{report.csvData.cingulatefrontal.lh.percentile}} %</div>
         <div class="percentile-box">
           <div class="percentile-box-child"></div>
@@ -192,7 +192,7 @@
           <div class="percentile-box-child1"></div>
         </div>
         <div class="div1">({{report.csvData.cingulatefrontal.lh.min}} - {{report.csvData.cingulatefrontal.lh.max}})</div>
-        <b class="b">◆</b>
+        <b class="b" style="position: absolute; left: {{ report.csvData.cingulatefrontal.lh.percentile|clamp(6, 94) }}%; bottom: -10px; transform: translateX(-50%);">◆</b>
       </div>
     </div>
     <div class="metadata">
