@@ -30,42 +30,21 @@ def load_report_data():
     return round_floats(data)
 
 
-# Sample data to pass to the template
 report_data = {
     'title': 'Brain Cortexes Report',
     'subtitle': 'Volumetric Radiology Report',
-    'orderID': '123456789',
+    'orderID': '',
     'csvData': load_report_data(),
 }
 
-
-@app.route('/report')
+@app.route('/')
 def home():
     rendered_html = render_template('index.html', report=report_data)
-
-    # pdf = HTML(string=rendered_html).write_pdf()
-    # with open('report.pdf', 'wb') as f:
-    #     f.write(pdf)
 
     # Convert the HTML to a response object and then return it
     response = make_response(rendered_html)
     response.headers['Content-Type'] = 'text/html'
     return response
-
-# # Generate PDF Version
-# @app.route('/reportpdf')
-# def report_pdf():
-#     # Make a PDF straight from HTML in a string just like the rendered HTML page
-#     rendered_html = render_template('index.html', report=report_data)
-#     pdf = HTML(string=rendered_html).write_pdf()
-#     # print(pdf)
-
-#     # Convert the PDF to a response object and then return it
-#     response = Response(pdf, content_type='application/pdf')
-#     response.headers['Content-Disposition'] = 'inline; filename=report.pdf'
-#     response.headers['Content-Transfer-Encoding'] = 'utf-8'
-#     return response
-
 
 if __name__ == '__main__':
     # print(report_data)

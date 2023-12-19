@@ -368,21 +368,96 @@
   height: 74px;
 }
 
+.mm3-parent8 {
+  top: 417px;
+  right: 240px;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-honeydew-200);
+  width: 189px;
+  height: 74px;
+}
+
+.mm3-parent8 {
+  top: 417px;
+  right: 240px;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-honeydew-200);
+  width: 189px;
+  height: 74px;
+}
+
+.entorhinal-cortex {
+  position: absolute;
+  top: 512px; /* Adjust this value as needed */
+  right: 443px;
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 124px;
+  height: 24px;
+}
+
+.mm3-parent9, .mm3-parent10 {
+  position: absolute;
+  top: 494px; /* Adjust this value as needed */
+  right: 27px; /* Adjust this for mm3-parent10 */
+  border-radius: var(--br-8xs);
+  background-color: var(--color-honeydew-200);
+  width: 189px;
+  height: 74px;
+  overflow: hidden;
+}
+
+.mm3-parent10 {
+  right: 240px; /* This positions the right hemisphere data */
+}
+
+.hippocampus {
+  position: absolute;
+  top: 592px; /* Adjust this value as needed */
+  right: 443px;
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 124px;
+  height: 24px;
+}
+
+.mm3-parent11, .mm3-parent12 {
+  position: absolute;
+  top: 571px; /* Adjust this value as needed */
+  right: 27px; /* Adjust this for mm3-parent10 */
+  border-radius: var(--br-8xs);
+  background-color: var(--color-honeydew-200);
+  width: 189px;
+  height: 74px;
+  overflow: hidden;
+}
+
+.mm3-parent12 {
+  right: 240px; /* This positions the right hemisphere data */
+}
+
+
 .table {
-  top: 149px;
+  /* top: 149px; */
   /* left: 350px; */
-  width: 626px;
+  transform: translate(-50%,0) scale(1.2);
+  left: 50%;
+  width: 540px;
   height: 907px;
   text-align: center;
   size: a4;
   margin-top: 140px;
-  transform: scale(1.2);
+  /* transform: scale(1.2); */
 }
 
 .evaluation,
 .order-id,
 .sequence {
-  position: absolute;
+  /* position: absolute; */
   top: 26px;
   left: -15px;
   font-weight: 600;
@@ -427,12 +502,7 @@
 }
 
 .metadata {
-  position: relative;
-  right: -20px;
-  width: 542px;
-  height: 75px;
-  /* margin-top: 100px; */
-  top: 100px;
+  margin-top: 30px;
 }
 
 .page-2-of {
@@ -442,7 +512,7 @@
 }
 
 .mockup-report-not {
-  position: absolute;
+  /* position: absolute; */
   top: 12px;
   left: 0;
 }
@@ -464,13 +534,17 @@
 }
 
 .footer {
-  top: 900px;
-  left: 365px;
+  top: 1300px;
+  /* width:100%; */
+  text-align: center;
+  left:50%;
+  transform: translate(-50%,0);
+  /* left: 365px; */
 }
 
 .brain-lobe-structures,
 .segmentation-report {
-  position: absolute;
+  /* position: absolute; */
   top: 24px;
   left: 0;
 }
@@ -482,17 +556,17 @@
 }
 
 .header-child {
-  position: absolute;
+  /* position: absolute; */
   top: 65.5px;
   left: -0.5px;
   border-top: 1px solid var(--color-black);
   box-sizing: border-box;
-  width: 738px;
+  width: 100%;
   height: 1px;
 }
 
 .image-1-icon {
-  position: absolute;
+  /* position: absolute; */
   top: 2px;
   left: 557px;
   width: 184px;
@@ -501,10 +575,13 @@
 }
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
   /* position: absolute; */
   top: 100px;
   /* left: 350px; */
-  width: 551px;
+  width: 100%;
   height: 66px;
 }
 
@@ -545,9 +622,6 @@
 
 @media screen {
   body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20mm;
+    padding: 30px 15%;
   }
 }
