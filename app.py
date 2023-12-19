@@ -1,6 +1,6 @@
 from flask import Flask, Response, render_template, make_response, url_for
 from os import walk
-from weasyprint import HTML, CSS
+# from weasyprint import HTML, CSS
 # from flask_weasyprint import HTML, render_pdf
 import os
 import pandas as pd
