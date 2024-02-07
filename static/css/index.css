@@ -2,20 +2,20 @@
 .right-hemisphere {
   top: 0;
   font-size: var(--font-size-sm);
-  width: 124px;
+  width: 224px;
   height: 24px;
 }
 
 .left-hemisphere {
   position: absolute;
-  right: 273px;
+  right: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .right-hemisphere {
-  right: 60px;
+  right: 90px;
 }
 
 .div,
@@ -30,7 +30,7 @@
 
 .frontal {
   top: 56px;
-  right: 443px;
+  right: 540px;
   font-size: var(--font-size-sm);
   width: 124px;
   height: 24px;
@@ -227,7 +227,7 @@
 .mm3-parent2 {
   position: absolute;
   top: 187.5px;
-  right: 27px;
+  right: 107px;
   border-radius: var(--br-8xs);
   background-color: var(--color-honeydew-200);
   width: 189px;
@@ -236,7 +236,7 @@
 }
 
 .mm3-parent2 {
-  right: 240px;
+  right: 320px;
 }
 
 .b6,
@@ -446,7 +446,7 @@
   /* left: 350px; */
   transform: translate(-50%,0) scale(1.2);
   left: 50%;
-  width: 540px;
+  width: 700px;
   height: 907px;
   text-align: center;
   size: a4;
@@ -463,7 +463,7 @@
   font-weight: 600;
   display: flex;
   align-items: center;
-  width: 74px;
+  /* width: 74px; */
   height: 24px;
 }
 

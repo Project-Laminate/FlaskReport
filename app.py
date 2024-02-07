@@ -1,7 +1,7 @@
 from flask import Flask, Response, render_template, make_response, url_for
-from os import walk
 import pandas as pd
 import json
+import os
 
 
 app = Flask(__name__)
@@ -28,9 +28,11 @@ def load_report_data():
 
 
 report_data = {
-    'title': 'Brain Cortexes Report',
+    'title': 'Laminate Brain Cortexes Report',
     'subtitle': 'Volumetric Radiology Report',
-    'orderID': '',
+    'orderID': 'XC63-JKU-20H8-9OPQ',
+    'sequence': '12, 3D FLAIR_axial, 1.2 x 1.2 x 1.2 mm³, TR: 5000.0 ms',
+    'date': 'May 20, 2023, 10:30 AM (+02:00 UTC), Software Version 4.5.7',
     'csvData': load_report_data(),
 }
 
