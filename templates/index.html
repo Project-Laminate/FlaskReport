@@ -51,17 +51,25 @@
         let report = {
             csvData: reportData
         }
-        console.log(report)
-        //  loop through the report data and add rows using keys and values
-        for (let key in report.csvData) {
-            if (report.csvData.hasOwnProperty(key)) {
-                let value = report.csvData[key];
-                // console.log(key, value);
-                document.getElementById("table").appendChild(newRow(paddingCnt, key, value));
-                paddingCnt += 84;
-            }
+         // Convert object into an array of objects with key and priority
+        let dataArray = Object.keys(report.csvData).map(key => {
+            return {
+                key: key,
+                value: report.csvData[key],
+                priority: report.csvData[key].priority // Use the 'priority' property
+            };
+        });
+
+        // Sort the array by priority
+        dataArray.sort((a, b) => a.priority - b.priority);
+
+        // Loop through the sorted array and add rows using keys and values
+        for (let item of dataArray) {
+            document.getElementById("table").appendChild(newRow(paddingCnt, item.key, item.value));
+            paddingCnt += 84; // Increment padding for the next row
         }
     }
+
     function calculatePosition(percentile) {
             // Define the pixel boundaries of the percentiles
             const boundaries = [0, 0.13, 2.28, 97.72, 99.87, 100];
@@ -104,7 +112,7 @@
         let row = document.createElement("div");
         row.innerHTML = `
         <div class="row">
-            <b class="frontal" style="top:${padding}px !important;">${value.display}</b>
+            <b class="frontal" style="top:${padding+25}px !important;">${value.display}</b>
             <div class="mm3-parent2" style="top:${padding}px !important;">
                 <div class="mm3">${value.lh.volume} mm<sup>3</sup></div>
                 <div class="div">${value.lh.percentile} %</div>
