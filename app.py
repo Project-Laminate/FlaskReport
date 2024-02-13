@@ -12,7 +12,7 @@ def clamp_filter(value, min_value, max_value):
 
 def round_floats(obj):
     if isinstance(obj, float):
-        return round(obj, 2)
+        return round(obj, 1)
     elif isinstance(obj, dict):
         return dict((k, round_floats(v)) for k, v in obj.items())
     elif isinstance(obj, (list, tuple)):
@@ -28,11 +28,11 @@ def load_report_data():
 
 
 report_data = {
-    'title': 'Laminate Brain Cortexes Report',
-    'subtitle': 'Volumetric Radiology Report',
-    'orderID': 'XC63-JKU-20H8-9OPQ',
-    'sequence': '12, 3D FLAIR_axial, 1.2 x 1.2 x 1.2 mm³, TR: 5000.0 ms',
-    'date': 'May 20, 2023, 10:30 AM (+02:00 UTC), Software Version 4.5.7',
+    'title': 'Laminate Volumetric Brain  Report',
+    'subtitle': 'Single Timepoint Dementia Analysis',
+    'accessionNumber': 'CCAD398390',
+    'sex': 'F',
+    'age': '64',
     'csvData': load_report_data(),
 }
 
