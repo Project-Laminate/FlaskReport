@@ -24,22 +24,22 @@ for (let item of dataArray) {
 }
 }
 
-function calculatePosition(reading, mean, std) {
+function calculatePosition(percentile) {
     // Define new boundaries based on standard deviations from the mean
     const boundaries = [
-        mean - 4*std, 
-        mean - 3*std, 
-        mean - 2*std, 
-        mean + 2*std, 
-        mean + 3*std, 
-        mean + 4*std
+        0, 
+        5, 
+        25, 
+        75, 
+        95, 
+        100
     ];
     const pixelWidths = [13, 26, 91, 26, 13];
     let position = 0;
     let accumulatedWidth = 0;
 
     // Find the index for the percentile range
-    const index = boundaries.findIndex((value) => reading <= value) - 1;
+    const index = boundaries.findIndex((value) => percentile <= value) - 1;
 
     // Calculate the width covered by the previous segments
     for (let i = 0; i < index; i++) {
@@ -56,14 +56,14 @@ function calculatePosition(reading, mean, std) {
         // console.log(segmentWidth)
 
         // Calculate the percentage of the way through the current segment
-        const segmentPercent = (reading - segmentStartPercentile) / (segmentEndPercentile - segmentStartPercentile);
+        const segmentPercent = (percentile - segmentStartPercentile) / (segmentEndPercentile - segmentStartPercentile);
         // console.log(segmentPercent)
         // Convert that to a pixel value and add it to the accumulated width
         position = accumulatedWidth + (segmentPercent * segmentWidth);
         // console.log(position)
     } else {
-        // If the reading is less than the first boundary, it's in the first segment
-        position = (reading / boundaries[1]) * pixelWidths[0];
+        // If the percentile is less than the first boundary, it's in the first segment
+        position = (percentile / boundaries[1]) * pixelWidths[0];
     }
 
     return position;
@@ -83,8 +83,8 @@ function newRow(padding, key, value) {
             <div class="rectangle-div"></div>
             <div class="percentile-box-child1"></div>
             </div>
-            <div class="div1">(${value.lh.min} - ${value.lh.max})</div>
-            <b class="b" style="position: absolute; left: ${calculatePosition(value.lh.reading, value.lh.mean, value.lh.std)}px; bottom: -10px; transform: translateX(23%);">◆</b>
+            <div class="div1">(${value.lh.twentyfifth_percentile} - ${value.lh.seventyfifth_percentile})</div>
+            <b class="b" style="position: absolute; left: ${calculatePosition(value.lh.percentile)}px; bottom: -10px; transform: translateX(23%);">◆</b>
         </div>
         <div class="rh-tile" style="top:${padding}px !important;">
             <div class="reading">${value.rh.reading} ${value.rh.unit}</div>
@@ -96,8 +96,8 @@ function newRow(padding, key, value) {
             <div class="rectangle-div"></div>
             <div class="percentile-box-child1"></div>
             </div>
-            <div class="div1">(${value.rh.min} - ${value.rh.max})</div>
-            <b class="b" style="position: absolute; left: ${calculatePosition(value.rh.reading, value.rh.mean, value.rh.std)}px; bottom: -10px; transform: translateX(23%);">◆</b>
+            <div class="div1">(${value.rh.twentyfifth_percentile} - ${value.rh.seventyfifth_percentile})</div>
+            <b class="b" style="position: absolute; left: ${calculatePosition(value.rh.percentile)}px; bottom: -10px; transform: translateX(23%);">◆</b>
         </div>
     </div>
     `;
