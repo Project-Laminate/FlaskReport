@@ -23,14 +23,13 @@ def round_floats(obj):
 
 # Add argument parser
 parser = argparse.ArgumentParser(description='Run the Flask app with specified JSON data file and patient ID.')
-parser.add_argument('--json-path', type=str, required=True, help='Path to the JSON data file.')
-parser.add_argument('--patient-id', type=str, required=True, help='Patient ID.')
+parser.add_argument('--input', type=str, required=True, help='Path to the JSON data file.')
+parser.add_argument('--id', type=str, required=True, help='Patient ID.')
 
 args = parser.parse_args()
 
-
 def load_report_data():
-    json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '/Users/soumenmohanty/Documents/GitHub/freesurfer-volume-analysis/Report Pipeline/F64test/csv_data.json')
+    json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), args.input)
     # json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data/csv_data.json')
     with open(json_path, 'r') as json_file:
         data = json.load(json_file)
@@ -44,7 +43,7 @@ loaded_data = load_report_data()
 report_data = {
     'title': 'Laminate Volumetric Brain Report',
     'subtitle': 'Single Timepoint Dementia Analysis',
-    'ID': 'MRN 10362431',
+    'ID': f'{args.id}',
     # 'csvData': loaded_data.get('data', {}),
     'csvData': load_report_data(),
     'age': loaded_data.get('age'),
