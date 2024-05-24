@@ -5,6 +5,11 @@ function addRows() {
 let report = {
     csvData: reportData
 }
+
+// remove age and sex from the data
+delete report.csvData.age;
+delete report.csvData.sex;
+
 // Convert object into an array of objects with key and priority
 let dataArray = Object.keys(report.csvData).map(key => {
     return {
@@ -21,6 +26,7 @@ dataArray.sort((a, b) => a.priority - b.priority);
 for (let item of dataArray) {
     document.getElementById("table").appendChild(newRow(paddingCnt, item.key, item.value));
     paddingCnt += 84; // Increment padding for the next row
+    // add height too 
 }
 }
 
@@ -49,18 +55,13 @@ function calculatePosition(percentile) {
     // Calculate the position within the current segment
     if (index >= 0) {
         const segmentStartPercentile = boundaries[index];
-        // console.log(segmentStartPercentile)
         const segmentEndPercentile = boundaries[index + 1];
-        // console.log(segmentEndPercentile)
         const segmentWidth = pixelWidths[index];
-        // console.log(segmentWidth)
 
         // Calculate the percentage of the way through the current segment
         const segmentPercent = (percentile - segmentStartPercentile) / (segmentEndPercentile - segmentStartPercentile);
-        // console.log(segmentPercent)
         // Convert that to a pixel value and add it to the accumulated width
         position = accumulatedWidth + (segmentPercent * segmentWidth);
-        // console.log(position)
     } else {
         // If the percentile is less than the first boundary, it's in the first segment
         position = (percentile / boundaries[1]) * pixelWidths[0];

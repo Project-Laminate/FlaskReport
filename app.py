@@ -2,6 +2,7 @@ from flask import Flask, Response, render_template, make_response, url_for
 import pandas as pd
 import json
 import os
+import argparse
 
 
 app = Flask(__name__)
@@ -19,21 +20,35 @@ def round_floats(obj):
         return list(map(round_floats, obj))
     return obj
 
+
+# Add argument parser
+parser = argparse.ArgumentParser(description='Run the Flask app with specified JSON data file and patient ID.')
+parser.add_argument('--json-path', type=str, required=True, help='Path to the JSON data file.')
+parser.add_argument('--patient-id', type=str, required=True, help='Patient ID.')
+
+args = parser.parse_args()
+
+
 def load_report_data():
-    json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data/csv_data.json')
+    json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '/Users/soumenmohanty/Documents/GitHub/freesurfer-volume-analysis/Report Pipeline/F64test/csv_data.json')
+    # json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data/csv_data.json')
     with open(json_path, 'r') as json_file:
         data = json.load(json_file)
+
     # recursively round all floats in json to 2 decimal places
     return round_floats(data)
 
+# Load the JSON data
+loaded_data = load_report_data()
 
 report_data = {
-    'title': 'Laminate Volumetric Brain  Report',
+    'title': 'Laminate Volumetric Brain Report',
     'subtitle': 'Single Timepoint Dementia Analysis',
-    'accessionNumber': 'CCAD398390',
-    'sex': 'F',
-    'age': '64',
+    'ID': 'MRN 10362431',
+    # 'csvData': loaded_data.get('data', {}),
     'csvData': load_report_data(),
+    'age': loaded_data.get('age'),
+    'sex': loaded_data.get('sex')
 }
 
 @app.route('/')

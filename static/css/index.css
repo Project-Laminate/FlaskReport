@@ -176,6 +176,8 @@
 .metadata {
   width: 80%; /* Adjust the width as necessary */
   margin-bottom: 20px; /* Spacing below the table */
+  /* give padding above table */
+  padding-top: 10px;
 }
 
 .metadata table {
@@ -204,29 +206,14 @@
   left: 0;
 }
 
-.footer,
-.group-child,
-.page-2-of-3-parent {
-  position: absolute;
-  top: -0.5px;
+.footer{
+  /* add footer to very bottom of page */
+  position: relative;
+  bottom: 0;
   left: 0;
-  width: 551px;
-  height: 1px;
-}
+  width: 100%;
+  height: 50px;
 
-.footer,
-.page-2-of-3-parent {
-  top: 0;
-  height: 27px;
-}
-
-.footer {
-  top: 1300px;
-  /* width:100%; */
-  text-align: center;
-  left:50%;
-  transform: translate(-50%,0);
-  /* left: 365px; */
 }
 
 .main-title,
