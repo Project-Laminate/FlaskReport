@@ -23,8 +23,8 @@ def round_floats(obj):
 
 # Add argument parser
 parser = argparse.ArgumentParser(description='Run the Flask app with specified JSON data file and patient ID.')
-parser.add_argument('--input', type=str, required=True, help='Path to the JSON data file.')
-parser.add_argument('--id', type=str, required=True, help='Patient ID.')
+parser.add_argument('--input', type=str, help='Path to the JSON data file.', default='data/csv_data.json')
+parser.add_argument('--id', type=str, help='Patient ID.', default='12345')
 
 args = parser.parse_args()
 
