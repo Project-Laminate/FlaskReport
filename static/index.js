@@ -1,32 +1,43 @@
 
-let paddingCnt = 44;
 function addRows() {
-
+    // console.log("Adding rows");
     let report = {
-        csvData: reportData
-    }
+        csvData1: window.reportData.csvData1,
+        csvData2: window.reportData.csvData2
+    };
 
-    // remove age and sex from the data
-    delete report.csvData.age;
-    delete report.csvData.sex;
+    // Remove age and sex from the data
+    delete report.csvData1.age;
+    delete report.csvData1.sex;
+    delete report.csvData2.age;
+    delete report.csvData2.sex;
 
     // Convert object into an array of objects with key and priority
-    let dataArray = Object.keys(report.csvData).map(key => {
+    let dataArray1 = Object.keys(report.csvData1).map(key => {
         return {
             key: key,
-            value: report.csvData[key],
-            priority: report.csvData[key].priority // Use the 'priority' property
+            value: report.csvData1[key],
+            priority: report.csvData1[key].priority // Use the 'priority' property
         };
     });
 
-    // Sort the array by priority
-    dataArray.sort((a, b) => a.priority - b.priority);
+    let dataArray2 = Object.keys(report.csvData2).map(key => {
+        return {
+            key: key,
+            value: report.csvData2[key],
+            priority: report.csvData2[key].priority // Use the 'priority' property
+        };
+    });
+
+    // Sort the arrays by priority
+    dataArray1.sort((a, b) => a.priority - b.priority);
+    dataArray2.sort((a, b) => a.priority - b.priority);
+
 
     // Loop through the sorted array and add rows using keys and values
-    for (let item of dataArray) {
-        document.getElementById("table").appendChild(newRow(paddingCnt, item.key, item.value));
-        paddingCnt += 84; // Increment padding for the next row
-        // add height too 
+    for (let i = 0; i < dataArray1.length; i++) {
+        document.getElementById("table").appendChild(newRow(dataArray1[i].key, dataArray1[i].value, dataArray2[i].value));
+        // add height too
     }
 }
 
@@ -69,23 +80,23 @@ function calculatePosition(percentile) {
 
     return position;
 }
-function newRow(padding, key, value) {
+function newRow(key, value1, value2) {
     let row = document.createElement("div");
     row.innerHTML = `
-    <div class="row" style="padding-top: 3px;">
-        <b class="display-label"">${value.display}</b>
+   <div class="row" style="padding-top: 3px;">
+        <b class="display-label">${value1.display}</b>
         <div class="container">
             <div class="row">
-                <span class="measure-text">3135.7</span>
+                <span class="measure-text">${value1.lh.reading}</span>
                 <img src="/static/Arrow1grey.svg" alt="Arrow" width="36" />
-                <span class="measure-subtext">+10%</span>
-                <span class="measure-text">3295.5</span>
+                <span class="measure-subtext">${((value2.lh.reading - value1.lh.reading) / value1.lh.reading * 100).toFixed(1)}%</span>
+                <span class="measure-text">${value2.lh.reading}</span>
             </div>
             <div class="row">
-                <span class="measure-text">45.5 <sup>pct</sup></span>
-                <span class="measure-subtext">+17 <sup>pct</sup></span>
+                <span class="measure-text">${value1.lh.percentile} <sup>pct</sup></span>
+                <span class="measure-subtext">${(value2.lh.percentile - value1.lh.percentile).toFixed(1)} <sup>pct</sup></span>
                 <img src="/static/Arrow1grey.svg" alt="Arrow" width="36" />
-                <span class="measure-text">57.5 <sup>pct</sup></span>
+                <span class="measure-text">${value2.lh.percentile} <sup>pct</sup></span>
             </div>
             <div class="percentile-box">
                 <div class="bar">
@@ -96,37 +107,38 @@ function newRow(padding, key, value) {
                     <div class="rect-5"></div>
                 </div>
                 <img src="/static/ChangeArrow.svg" id="dynamicArrow" class="change-arrow" alt="Change Arrow" />
-                <div class="normal-range-text">(2500.5 - 4500.5)</div>
+                <div class="normal-range-text">(${value1.lh.twentyfifth_percentile} - ${value1.lh.seventyfifth_percentile})</div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <span class="measure-text">3135.7</span>
+                <span class="measure-text">${value1.rh.reading}</span>
                 <img src="/static/Arrow1grey.svg" alt="Arrow" width="36" />
-                <span class="measure-subtext">+10%</span>
-                <span class="measure-text">3295.5</span>
+                <span class="measure-subtext">${((value2.rh.reading - value1.rh.reading) / value1.rh.reading * 100).toFixed(1)}%</span>
+                <span class="measure-text">${value2.rh.reading}</span>
             </div>
             <div class="row">
-                <span class="measure-text">45.5 <sup>pct</sup></span>
-                <span class="measure-subtext">+17 <sup>pct</sup></span>
+                <span class="measure-text">${value1.rh.percentile} <sup>pct</sup></span>
+                <span class="measure-subtext">${(value2.rh.percentile - value1.rh.percentile).toFixed(1)} <sup>pct</sup></span>
                 <img src="/static/Arrow1grey.svg" alt="Arrow" width="36" />
-                <span class="measure-text">57.5 <sup>pct</sup></span>
+                <span class="measure-text">${value2.rh.percentile} <sup>pct</sup></span>
             </div>
             <div class="percentile-box">
                 <div class="bar">
                     <div class="rect-1"></div>
                     <div class="rect-2"></div>
-                    <div class="rect-3">
-                    </div>
+                    <div class="rect-3"></div>
                     <div class="rect-4"></div>
                     <div class="rect-5"></div>
                 </div>
                 <img src="/static/ChangeArrow.svg" id="dynamicArrow" class="change-arrow" alt="Change Arrow" />
-                <div class="normal-range-text">(2500.5 - 4500.5)</div>
+                <div class="normal-range-text">(${value1.rh.twentyfifth_percentile} - ${value1.rh.seventyfifth_percentile})</div>
             </div>
         </div>
     </div>
     `;
     return row;
 }
+
+console.log("started JS file");
 addRows();

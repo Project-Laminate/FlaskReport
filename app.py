@@ -23,18 +23,14 @@ def round_floats(obj):
 
 # Add argument parser
 parser = argparse.ArgumentParser(description='Run the Flask app with specified JSON data files and patient ID.')
-parser.add_argument('--input1', type=str, required=True, help='Path to the first JSON data file.')
-parser.add_argument('--input2', type=str, required=True, help='Path to the second JSON data file.')
+parser.add_argument('--input1', type=str, help='Path to the first JSON data file.', default='/Users/soumenmohanty/Documents/GitHub/freesurfer-volume-analysis/Sample Subject/sub-007/ses-01/stats/csv_data.json')
+parser.add_argument('--input2', type=str, help='Path to the second JSON data file.', default='/Users/soumenmohanty/Documents/GitHub/freesurfer-volume-analysis/Sample Subject/sub-007/ses-02/stats/csv_data.json')
 parser.add_argument('--id', type=str, help='Patient ID.', default='test-CCAD123')
 args = parser.parse_args()
 
-def load_report_data():
-    json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), args.input)
-    # json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data/csv_data.json')
+def load_report_data(json_path):
     with open(json_path, 'r') as json_file:
         data = json.load(json_file)
-
-    # recursively round all floats in json to 2 decimal places
     return round_floats(data)
 
 # Load the JSON data for both timepoints

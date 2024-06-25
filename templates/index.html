@@ -81,8 +81,13 @@
     </div> -->
   </body>
   <script>
-    // Pass the report data to the external script by setting it as a global variable
-    window.reportData = {{ report.csvData | tojson | safe }};
+    window.reportData = {
+        csvData1: {{ report.csvData1 | tojson | safe }},
+        csvData2: {{ report.csvData2 | tojson | safe }},
+        age1: {{ report.age1 | tojson | safe }},
+        age2: {{ report.age2 | tojson | safe }},
+        sex: {{ report.sex | tojson | safe }}
+      };
   </script>
   <script src="{{ url_for('static', filename='index.js') }}"></script>
 </html>
