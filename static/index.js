@@ -106,7 +106,7 @@ function newRow(key, value1, value2) {
                     <div class="rect-4"></div>
                     <div class="rect-5"></div>
                 </div>
-                 <!-- <img src="/static/ChangeArrow.svg" id="dynamicArrow" class="change-arrow" alt="Change Arrow" /> -->
+                  <img src="/static/ChangeArrow.svg" class="change-arrow" alt="Change Arrow" style="transform: rotate(180deg);"/>
                 <div class="normal-range-text">(${value2.lh.twentyfifth_percentile} - ${value2.lh.seventyfifth_percentile})</div>
             </div>
         </div>

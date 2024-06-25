@@ -112,20 +112,6 @@
 
 }
 
-.percentile-box .change-arrow-test {
-  position: absolute;
-  top: 50%;
-  /* Center vertically */
-  left: 50%;
-  /* Center horizontally */
-  transform: translate(-10%, -50%);
-  z-index: 10;
-  /*  Ensure it's above other elements */
-  width: 36px;
-  top: 6px;
-
-}
-
 .percentile-box .bar {
   display: flex;
   align-items: center;
