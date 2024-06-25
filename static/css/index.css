@@ -10,13 +10,6 @@
   justify-content: center;
 }
 
-.percentile-value,
-.reading{
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .display-label {
   display: flex;

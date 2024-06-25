@@ -72,7 +72,7 @@ function calculatePosition(percentile) {
 function newRow(padding, key, value) {
     let row = document.createElement("div");
     row.innerHTML = `
-    <div class="row">
+    <div class="row" style="padding-top: 3px;">
         <b class="display-label"">${value.display}</b>
         <div class="container">
             <div class="row">

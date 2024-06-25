@@ -37,20 +37,44 @@
             <td class="value">{{ report.sex }}</td>
           </tr>
           <tr>
-            <td class="key">Age:</td>
+            <td class="key">Age at Scan 1:</td>
+            <td class="value">{{ report.age }}</td>
+          </tr>
+          <tr>
+            <td class="key">Age at Scan 2:</td>
             <td class="value">{{ report.age }}</td>
           </tr>
         </table>
       </div>
 
-    <div id="table" class="table">
+    <div id="table" class="table" style="padding-bottom: 100px;">
       <div>
         <div class="row" style="gap: 90px; padding-left: 146px; font-size: small;"
           <span class="left-hemisphere">Left Hemisphere</span>
           <span class="right-hemisphere">Right Hemisphere</span>
         </div>
       </div>
+      <div>
+        <div class="row" style="gap: 50px; padding-left: 135px; font-size: 12px;"
+          <span class="left-hemisphere-scans">
+            <row class="row" style="gap: 65px;">
+              <span> Scan 1 </span>
+              <span> Scan 2 </span>
+            </row>
+          </span>
+          <span class="right-hemisphere-scans">
+            <row class="row" style="gap: 65px;">
+              <span> Scan 1 </span>
+              <span> Scan 2 </span>
+            </row>
+          </span>
+          </div>
+        </div>
     </div>
+
+    <!-- <div class="footer">
+      <div class="disclaimer">** Report not for medical use **</div>
+    </div> -->
 
     <!-- <div class="footer">
       <div class="disclaimer">** Report not for medical use **</div>
