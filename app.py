@@ -41,8 +41,8 @@ def load_report_data():
 loaded_data = load_report_data()
 
 report_data = {
-    'title': 'Laminate Volumetric Brain Report',
-    'subtitle': 'Single Timepoint Dementia Analysis',
+    'title': 'Laminate Brain Atrophy Report',
+    'subtitle': 'Two Timepoint Analysis',
     'ID': f'{args.id}',
     # 'csvData': loaded_data.get('data', {}),
     'csvData': load_report_data(),

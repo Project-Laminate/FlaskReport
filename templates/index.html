@@ -5,11 +5,11 @@
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='css/index.css') }}"
+      href="static/css/index.css"
     />
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='css/global.css') }}"
+      href="static/css/global.css"
     />
 
     <!-- <link rel="stylesheet" -->
@@ -22,7 +22,7 @@
         <div class="main-title">{{ report.title }}</div>
         <div class="sub-title">{{ report.subtitle }}</div>
       </div>
-      <img class="logo" alt="" src="/static/logo.png" />
+      <!-- <img class="logo" alt="" src="/static/logo.png" /> -->
     </div>
     <div class="header-line"></div>
 
@@ -44,8 +44,12 @@
       </div>
 
     <div id="table" class="table">
-      <b class="left-hemisphere">Left Hemisphere</b>
-      <b class="right-hemisphere">Right Hemisphere</b>
+      <div>
+        <div class="row" style="gap: 90px; padding-left: 146px; font-size: small;"
+          <span class="left-hemisphere">Left Hemisphere</span>
+          <span class="right-hemisphere">Right Hemisphere</span>
+        </div>
+      </div>
     </div>
 
     <!-- <div class="footer">

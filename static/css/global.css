@@ -8,9 +8,9 @@ body {
   --font-source-serif-pro: "Source Serif Pro";
 
   /* font sizes */
-  --font-size-xs: 12px;
-  --font-size-5xs: 8px;
-  --font-size-sm: 14px;
+  --font-size-xs: 10px;
+  --font-size-5xs: 10px;
+  --font-size-sm: 12px;
 
   /* Colors */
   --color-white: #fff;

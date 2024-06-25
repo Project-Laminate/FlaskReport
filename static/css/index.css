@@ -1,23 +1,11 @@
 .left-hemisphere,
 .right-hemisphere {
-  top: 0;
-  font-size: var(--font-size-sm);
-  width: 224px;
-  height: 24px;
-}
-
-.left-hemisphere {
-  right: 300px;
-  position: absolute;
+  /* font-size: var(--font-size-sm); */
+  /* width: auto; */
+  /* height: auto; */
+  /* flex box  */
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.right-hemisphere {
-  right: 90px;
-  position: absolute;
-  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
@@ -31,7 +19,6 @@
 }
 
 .display-label {
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,7 +26,8 @@
   right: 510px;
   font-size: var(--font-size-sm);
   width: 124px;
-  height: 24px;
+  font-weight: 400;
+
 }
 
 .percentile-value,
@@ -61,6 +49,166 @@
   width: 72px;
 }
 
+
+.container {
+  /* left: 30px; */
+  /* top: 25px; */
+  width: 172px;
+  height: auto;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  padding: 2px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Source Serif Pro", serif;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3px;
+  /* padding-top: 5px; */
+  top: 50px;
+
+  /* space in between items in row*/
+  gap: 10px;
+  
+}
+
+.measure-text {
+  font-weight: 400;
+  font-size: 10px;
+  /* line-height: 12.53px; */
+  color: #000000;
+  margin: 0 10px;
+}
+
+.measure-subtext {
+  position: absolute;
+  font-weight: 400;
+  font-size: 8px;
+  /* line-height: 10.02px; */
+  color: #6c6c6cff;
+  margin-top: -10px;
+}
+
+.percentile-box {
+  width: 140px;
+  height: auto;
+  position: relative;
+  /* margin-top: 10px; */
+}
+
+.percentile-box .change-arrow {
+  position: absolute;
+  top: 50%;
+  /* Center vertically */
+  left: 50%;
+  /* Center horizontally */
+  transform: translate(-10%, -50%);
+  z-index: 10;
+  /*  Ensure it's above other elements */
+  width: 36px;
+  /* Example width, adjust as needed */
+  top: 6px;
+
+}
+
+.percentile-box .change-arrow-test {
+  position: absolute;
+  top: 50%;
+  /* Center vertically */
+  left: 50%;
+  /* Center horizontally */
+  transform: translate(-10%, -50%);
+  z-index: 10;
+  /*  Ensure it's above other elements */
+  width: 36px;
+  top: 6px;
+
+}
+
+.percentile-box .bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 12px;
+  width: 100%;
+  /* margin-top: 5px; */
+}
+
+.percentile-box .bar div {
+  height: 100%;
+}
+
+.percentile-box .bar .rect-1 {
+  width: 18px;
+  background-color: #ff6666;
+  /* red */
+  /* give it a stroke */
+  border: 0.5px solid #000000;
+  /* remove right stroke */
+  border-right: none;
+}
+
+.percentile-box .bar .rect-2 {
+  width: 24px;
+  background-color: #ffd966;
+  /* yellow */
+  border: 0.5px solid #000000;
+  border-right: none;
+
+}
+
+.percentile-box .bar .rect-3 {
+  width: 84px;
+  background-color: #d8f5f5;
+  /* green */
+  border: 0.5px solid #000000;
+  border-right: none;
+
+
+}
+
+.percentile-box .bar .rect-4 {
+  width: 24px;
+  background-color: #ffd966;
+  /* yellow */
+  border: 0.5px solid #000000;
+  border-right: none;
+}
+
+.percentile-box .bar .rect-5 {
+  width: 18px;
+  background-color: #ff6666;
+  /* red */
+  border: 0.5px solid #000000;
+}
+
+.percentile-box .normal-range-measure {
+  font-weight: 400;
+  font-size: 8px;
+  /* line-height: 7.52px; */
+  color: #afb8b5;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.normal-range-text{
+  font-weight: 400;
+  font-size: 8px;
+  color: #afb8b5;
+  text-align: center;
+  margin-top: 2px;
+}
+
+
+/* 
 .percentile-box-child {
   position: absolute;
   top: 0;
@@ -112,7 +260,7 @@
   left: calc(50% - 84.5px);
   width: 169px;
   height: 15px;
-}
+} */
 
 .b, .div1 {
   position: absolute;
@@ -153,12 +301,6 @@
   right: 320px;
 }
 
-/* .reading-parent7,
-.reading-parent8,
-.table {
-  position: absolute;
-  overflow: hidden;
-} */
 
 .table {
   /* top: 149px; */
@@ -178,6 +320,7 @@
   margin-bottom: 20px; /* Spacing below the table */
   /* give padding above table */
   padding-top: 10px;
+  font-size: 12px;
 }
 
 .metadata table {
@@ -221,6 +364,7 @@
   /* position: absolute; */
   top: 24px;
   left: 0;
+  font-size: 14px;
 }
 
 .main-title {
@@ -257,6 +401,7 @@
   /* left: 350px; */
   width: 100%;
   height: 66px;
+  font-size: 10px;
 }
 
 @media screen {
