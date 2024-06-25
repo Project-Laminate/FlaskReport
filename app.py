@@ -22,10 +22,10 @@ def round_floats(obj):
 
 
 # Add argument parser
-parser = argparse.ArgumentParser(description='Run the Flask app with specified JSON data file and patient ID.')
-parser.add_argument('--input', type=str, help='Path to the JSON data file.', default='data/csv_data.json')
-parser.add_argument('--id', type=str, help='Patient ID.', default='12345')
-
+parser = argparse.ArgumentParser(description='Run the Flask app with specified JSON data files and patient ID.')
+parser.add_argument('--input1', type=str, required=True, help='Path to the first JSON data file.')
+parser.add_argument('--input2', type=str, required=True, help='Path to the second JSON data file.')
+parser.add_argument('--id', type=str, help='Patient ID.', default='test-CCAD123')
 args = parser.parse_args()
 
 def load_report_data():
@@ -37,17 +37,20 @@ def load_report_data():
     # recursively round all floats in json to 2 decimal places
     return round_floats(data)
 
-# Load the JSON data
-loaded_data = load_report_data()
+# Load the JSON data for both timepoints
+loaded_data1 = load_report_data(args.input1)
+loaded_data2 = load_report_data(args.input2)
 
+# Prepare the report data
 report_data = {
     'title': 'Laminate Brain Atrophy Report',
     'subtitle': 'Two Timepoint Analysis',
     'ID': f'{args.id}',
-    # 'csvData': loaded_data.get('data', {}),
-    'csvData': load_report_data(),
-    'age': loaded_data.get('age'),
-    'sex': loaded_data.get('sex')
+    'csvData1': loaded_data1,
+    'csvData2': loaded_data2,
+    'age1': loaded_data1.get('age'),
+    'age2': loaded_data2.get('age'),
+    'sex': loaded_data1.get('sex')  # Assuming sex is the same in both files
 }
 
 @app.route('/')
