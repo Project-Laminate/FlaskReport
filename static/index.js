@@ -106,8 +106,8 @@ function newRow(key, value1, value2) {
                     <div class="rect-4"></div>
                     <div class="rect-5"></div>
                 </div>
-                <img src="/static/ChangeArrow.svg" id="dynamicArrow" class="change-arrow" alt="Change Arrow" />
-                <div class="normal-range-text">(${value1.lh.twentyfifth_percentile} - ${value1.lh.seventyfifth_percentile})</div>
+                 <!-- <img src="/static/ChangeArrow.svg" id="dynamicArrow" class="change-arrow" alt="Change Arrow" /> -->
+                <div class="normal-range-text">(${value2.lh.twentyfifth_percentile} - ${value2.lh.seventyfifth_percentile})</div>
             </div>
         </div>
         <div class="container">
@@ -131,8 +131,8 @@ function newRow(key, value1, value2) {
                     <div class="rect-4"></div>
                     <div class="rect-5"></div>
                 </div>
-                <img src="/static/ChangeArrow.svg" id="dynamicArrow" class="change-arrow" alt="Change Arrow" />
-                <div class="normal-range-text">(${value1.rh.twentyfifth_percentile} - ${value1.rh.seventyfifth_percentile})</div>
+                <!-- <img src="/static/ChangeArrow.svg" id="dynamicArrow" class="change-arrow" alt="Change Arrow" /> -->
+                <div class="normal-range-text">(${value2.rh.twentyfifth_percentile} - ${value2.rh.seventyfifth_percentile})</div>
             </div>
         </div>
     </div>
@@ -140,5 +140,4 @@ function newRow(key, value1, value2) {
     return row;
 }
 
-console.log("started JS file");
 addRows();
